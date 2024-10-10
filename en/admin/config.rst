@@ -393,6 +393,8 @@ On the below table, if "Applied" is "server parameter", that parameter affects t
 |                               | deduplicate_key_level               | client/server parameter |         | int      | -1                             |                       |
 |                               +-------------------------------------+-------------------------+---------+----------+--------------------------------+-----------------------+
 |                               | print_index_detail                  | client/server parameter |         | bool     | no                             |                       |
+|                               +-------------------------------------+-------------------------+---------+----------+--------------------------------+-----------------------+
+|                               | flashback_timeout                   | client parameter        |         | int      | 300                            |                       |
 +-------------------------------+-------------------------------------+-------------------------+---------+----------+--------------------------------+-----------------------+
 
 .. _lpg:
@@ -2212,6 +2214,8 @@ The following are other parameters. The type and value range for each parameter 
 +-------------------------------------+--------+----------------+----------------+----------------+
 | print_index_detail                  | bool   | no             |                |                |
 +-------------------------------------+--------+----------------+----------------+----------------+
+| flashback_timeout                   | int    | 300            | 0              | 3600           |
++-------------------------------------+--------+----------------+----------------+----------------+
 
 **access_ip_control**
 
@@ -2425,6 +2429,9 @@ The following are other parameters. The type and value range for each parameter 
 
  It specifies whether option information in the **WITH** clause is displayed when index syntax information is displayed, such as in the SHOW CREATE TABLE statement. Default is NO. However, the unloaddb tool is not affected by this setting.
 
+**flashback_timeout**
+
+ It specifies the timeout used in the flashback utility. During a flashback operation, the user must input which transaction's changes to rewind within the timeout. The timeout used in this process can be set using the system parameter **flashback_timeout**.
 
 .. _broker-configuration:
 
