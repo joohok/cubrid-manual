@@ -2401,7 +2401,7 @@ HA 관련 파라미터
 
  **SHOW CREATE TABLE** 구문과 같이 인덱스 구문 정보를 보여줄 때 **WITH** 절의 옵션 정보의 출력 여부를 지정한다. 기본값은 NO이다. 단, unloaddb 툴에서는 이 설정값의 영향을 받지 않는다.
 
-**print_index_detail**
+**flashback_timeout**
 
  flashback 유틸리티에서 사용하는 제한 시간을 지정한다. flashback 유틸리티를 수행할 때, 사용자는 특정 트랜잭션의 변경 사항을 되돌릴지 여부를 제한 시간내에 입력해야한다. 이 제한 시간은 **flashback_timeout** 을 통해 지정할 수 있다.
 
