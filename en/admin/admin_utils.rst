@@ -3625,6 +3625,9 @@ Each column's meaning in the **Flashback Summary** is as following.
 .. note:: 
 		If users attempt to rewind a table on which a trigger is created, unintended results may be obtained. Users are recommended to disable triggers on the table before executing the flashback. For more information, see :ref:`alter-trigger`.
 
+.. note::
+		The flashback utility does not support non-standard data types such as SET, MULTISET, LIST, and JSON. When performing flashback on a class that includes columns with unsupported data types, those columns are displayed as having null values.
+
 The following shows [options] available with the **cubrid flashback** utility.
 
 .. program:: flashback
