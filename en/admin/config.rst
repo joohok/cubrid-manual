@@ -2429,9 +2429,11 @@ The following are other parameters. The type and value range for each parameter 
 
  It specifies whether option information in the **WITH** clause is displayed when index syntax information is displayed, such as in the SHOW CREATE TABLE statement. Default is NO. However, the unloaddb tool is not affected by this setting.
 
+.. _flashback_timeout:
+
 **flashback_timeout**
 
- It specifies the timeout used in the flashback utility. During a flashback operation, the user must input which transaction's changes to rewind within the timeout. The timeout used in this process can be set using the system parameter **flashback_timeout**.
+ It specifies the timeout for entering a transaction identifier in the flashback utility. If a transaction to be rewind is not entered within the specified timeout, an error message will be displayed, and the flashback utility will terminate. If there is no timeout, it may cause an issue where the archive log volumes required by the flashback utility are not deleted. Therefore, a method to remove the timeout is not provided. The default value is 300 seconds.
 
 .. _broker-configuration:
 
